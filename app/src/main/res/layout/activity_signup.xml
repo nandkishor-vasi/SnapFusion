@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textField"
+        android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -32,7 +32,6 @@
         app:layout_constraintTop_toBottomOf="@+id/profile_image">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="visible" />
@@ -45,9 +44,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:hint="email"
-        app:layout_constraintEnd_toEndOf="@+id/textField"
-        app:layout_constraintStart_toStartOf="@+id/textField"
-        app:layout_constraintTop_toBottomOf="@+id/textField">
+        app:layout_constraintEnd_toEndOf="@+id/name"
+        app:layout_constraintStart_toStartOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/name">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -57,7 +56,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textField3"
+        android:id="@+id/password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -67,7 +66,6 @@
         app:layout_constraintTop_toBottomOf="@+id/email">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="visible" />
@@ -75,16 +73,16 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/elevatedButton"
+        android:id="@+id/sign_up_btn"
         style="@style/Widget.Material3.Button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/blue"
         android:text="Register"
-        app:layout_constraintEnd_toEndOf="@+id/textField3"
-        app:layout_constraintStart_toStartOf="@+id/textField3"
-        app:layout_constraintTop_toBottomOf="@+id/textField3" />
+        app:layout_constraintEnd_toEndOf="@+id/password"
+        app:layout_constraintStart_toStartOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <TextView
         android:id="@+id/login"
@@ -94,5 +92,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/elevatedButton" />
+        app:layout_constraintTop_toBottomOf="@+id/sign_up_btn" />
 </androidx.constraintlayout.widget.ConstraintLayout>
