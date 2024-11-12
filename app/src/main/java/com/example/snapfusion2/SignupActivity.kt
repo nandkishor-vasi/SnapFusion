@@ -20,12 +20,12 @@ class SignupActivity : AppCompatActivity() {
         ActivitySignupBinding.inflate(layoutInflater)
     }
 lateinit var user:User
-private val launcher= registerForActivityResult(ActivityResultContracts.GetContent()){
-    uri ->
-    uri?.let {
-
-    }
-}
+//private val launcher= registerForActivityResult(ActivityResultContracts.GetContent()){
+//    uri ->
+//    uri?.let {
+//
+//    }
+//}
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

@@ -1,4 +1,7 @@
 package com.example.snapfusion2.utils
 
-class Utils {
+import android.net.Uri
+
+fun uploadImage(uri:Uri){
+
 }
