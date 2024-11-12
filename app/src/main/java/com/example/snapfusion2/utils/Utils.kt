@@ -1,32 +1,19 @@
 package com.example.snapfusion2.utils
 
-class Utils {
-}package com.example.snapfusion2.utils
-
-<<<<<<< HEAD
-import java.net.URI
+import android.net.Uri
 import com.google.firebase.storage.FirebaseStorage
 import java.util.UUID
-import javax.security.auth.callback.Callback
 
-fun uploadImage(uri: URI, folderName: String,callback: (String?) -> Unit) {
-    var imageurl: String? = null
-    FirebaseStorage.getInstance().getReference(folderName).child(UUID.randomUUID().toString())
+fun uploadImage(uri: Uri, folderName: String, callback: (String?) -> Unit) {
+    FirebaseStorage.getInstance().getReference(folderName)
+        .child(UUID.randomUUID().toString())
         .putFile(uri)
         .addOnSuccessListener {
-            it.storage.downloadUrl.addOnSuccessListener {
-                imageurl=it.tostring()
-                callback(imageurl)
-
-
+            it.storage.downloadUrl.addOnSuccessListener { downloadUri ->
+                callback(downloadUri.toString())
             }
         }
-    return imageurl!!
-
-    =======
-    import android.net.Uri
-
-    fun uploadImage(uri:Uri){
-        >>>>>>> origin/main
-
-    }
+        .addOnFailureListener {
+            callback(null)
+        }
+}
