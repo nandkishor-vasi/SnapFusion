@@ -9,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.snapfusion2.Models.User
 import com.example.snapfusion2.databinding.ActivitySignupBinding
+import com.example.snapfusion2.utils.USER_NODE
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
@@ -52,7 +53,7 @@ user=User()
                         user.name = binding.name.editText?.text.toString()
                         user.email = binding.email.editText?.text.toString()
                         user.password = binding.password.editText?.text.toString()
-                        Firebase.firestore.collection("User").document(Firebase.auth.currentUser!!.uid).set(user)
+                        Firebase.firestore.collection(USER_NODE).document(Firebase.auth.currentUser!!.uid).set(user)
                             .addOnSuccessListener {
                                 Toast.makeText(this@SignupActivity, "Login", Toast.LENGTH_SHORT).show()
                             }
