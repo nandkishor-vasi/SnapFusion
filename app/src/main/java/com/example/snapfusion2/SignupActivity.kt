@@ -10,6 +10,8 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.snapfusion2.Models.User
 import com.example.snapfusion2.databinding.ActivitySignupBinding
 import com.example.snapfusion2.utils.USER_NODE
+import com.example.snapfusion2.utils.USER_PROFILE_FOLDER
+import com.example.snapfusion2.utils.uploadImage
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
@@ -24,7 +26,13 @@ lateinit var user:User
 private val launcher= registerForActivityResult(ActivityResultContracts.GetContent()){
     uri ->
     uri?.let {
-
+        uploadImage(uri, USER_PROFILE_FOLDER){
+            if(it==null){
+            }else{
+                user.image=it
+                binding.profileImage.setImageURI(uri)
+            }
+        }
     }
 }
     override fun onCreate(savedInstanceState: Bundle?) {
