@@ -40,6 +40,8 @@ buildFeatures {
 
 dependencies {
 
+
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
